@@ -5,7 +5,11 @@
 body {
 	font-family: 'Noto Sans Variable', sans-serif;
 	background-color: #222222;
-	@apply grid text-gray-50;
+	/*@apply grid text-gray-50;*/
+}
+
+.local-dark {
+	color: #222222;
 }
 
 .glass-container {

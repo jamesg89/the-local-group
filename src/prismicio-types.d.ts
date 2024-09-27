@@ -4,7 +4,7 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice = MinimalHeaderSlice | HeroSlice | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -182,6 +182,156 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 export type AllDocumentTypes = PageDocument | SettingsDocument;
 
 /**
+ * Item in *Hero → Default → Primary → Buttons*
+ */
+export interface HeroSliceDefaultPrimaryButtonsItem {
+	/**
+	 * Button Link field in *Hero → Default → Primary → Buttons*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.buttons[].button_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	button_link: prismic.LinkField;
+
+	/**
+	 * Button Label field in *Hero → Default → Primary → Buttons*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.buttons[].button_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	button_label: prismic.KeyTextField;
+
+	/**
+	 * Button CTA field in *Hero → Default → Primary → Buttons*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: hero.default.primary.buttons[].button_cta
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	button_cta: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *Hero → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+	/**
+	 * Heading field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.RichTextField;
+
+	/**
+	 * Body field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.body
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	body: prismic.RichTextField;
+
+	/**
+	 * Buttons field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.buttons[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	buttons: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryButtonsItem>>;
+
+	/**
+	 * Image field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<HeroSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
+
+/**
+ * Primary content in *MinimalHeader → Default → Primary*
+ */
+export interface MinimalHeaderSliceDefaultPrimary {
+	/**
+	 * Heading field in *MinimalHeader → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: minimal_header.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	heading: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for MinimalHeader Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MinimalHeaderSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<MinimalHeaderSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *MinimalHeader*
+ */
+type MinimalHeaderSliceVariation = MinimalHeaderSliceDefault;
+
+/**
+ * MinimalHeader Shared Slice
+ *
+ * - **API ID**: `minimal_header`
+ * - **Description**: MinimalHeader
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MinimalHeaderSlice = prismic.SharedSlice<'minimal_header', MinimalHeaderSliceVariation>;
+
+/**
  * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -240,6 +390,15 @@ declare module '@prismicio/client' {
 			SettingsDocumentData,
 			SettingsDocumentDataNavigationItem,
 			AllDocumentTypes,
+			HeroSlice,
+			HeroSliceDefaultPrimaryButtonsItem,
+			HeroSliceDefaultPrimary,
+			HeroSliceVariation,
+			HeroSliceDefault,
+			MinimalHeaderSlice,
+			MinimalHeaderSliceDefaultPrimary,
+			MinimalHeaderSliceVariation,
+			MinimalHeaderSliceDefault,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,
 			RichTextSliceVariation,

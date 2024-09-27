@@ -1,0 +1,26 @@
+{
+  "id": "minimal_header",
+  "type": "SharedSlice",
+  "name": "MinimalHeader",
+  "description": "MinimalHeader",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

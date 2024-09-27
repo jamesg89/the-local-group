@@ -1,0 +1,161 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "The Locals Have Your Back",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 25
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "From mortgages to buying, staging to selling, and beyond. We’ve got you. #TheLocalExperience",
+							"spans": [
+								{
+									"type": "em",
+									"start": 0,
+									"end": 92
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"buttons": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"button_label",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Meet the locals."
+								}
+							],
+							[
+								"button_cta",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": false
+								}
+							],
+							[
+								"button_link",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "#"
+									}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"button_link",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "#",
+										"target": ""
+									}
+								}
+							],
+							[
+								"button_label",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Get in touch."
+								}
+							],
+							[
+								"button_cta",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": true
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"button_link",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "#",
+										"target": null
+									}
+								}
+							],
+							[
+								"button_label",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Start your search."
+								}
+							]
+						]
+					}
+				]
+			},
+			"image": {
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1704960945899-96c434c05264?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyOHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI3MDc3NTE5fDA&ixlib=rb-4.0.3&q=85",
+				"alt": "two halves of a lemon on a white surface",
+				"origin": {
+					"id": "c3lGQwGCvqw",
+					"url": "https://images.unsplash.com/photo-1704960945899-96c434c05264?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyOHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI3MDc3NTE5fDA&ixlib=rb-4.0.3&q=85",
+					"width": 6000,
+					"height": 4000
+				},
+				"width": 6000,
+				"height": 4000,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]

@@ -21,7 +21,13 @@
 		<meta name="twitter:card" content="summary_large_image" />
 	{/if}
 </svelte:head>
-<Header settings={$page.data.settings} />
+	{#if $page.data.uid === "home"}
+		<Header settings={$page.data.settings} />
+	{:else}
+		<div class="text-black">
+			<Header settings={$page.data.settings} />
+		</div>
+	{/if}
 <main>
 	<slot />
 </main>
