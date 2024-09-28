@@ -5,13 +5,13 @@
     /** @type {import("@prismicio/client").Content.SettingsDocument}*/  
     export let settings;
 </script>
-<header class="fixed local-dark top-0 w-full transparent backdrop-blur-sm duration-300 z-50 transition-transform ease-in">
+<header class="fixed text-slate w-full transparent backdrop-blur-sm duration-300 z-50 transition-transform ease-in">
     <nav class="container mx-auto flex flex-col md:flex-row justify-between py-4" aria-label="header">
-        <a href="/"><WordMark /></a>
+        <a href="/"><WordMark Clr="#222222" /></a>
         <span class="sr-only">{settings.data.site_title} home page</span>
             <ul class="flex gap-6">
                 {#each settings.data.navigation as item (item.label)}
-                    <li class="hover:text-gray-500">
+                    <li class="hover:text-gray-default">
                         <PrismicLink field={item.link} class="inline-flex min-h-11 items-center">
                             {item.label}
                         </PrismicLink>

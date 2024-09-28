@@ -4,7 +4,11 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = MinimalHeaderSlice | HeroSlice | RichTextSlice;
+type PageDocumentDataSlicesSlice =
+	| CtaContentImageSlice
+	| MinimalHeaderSlice
+	| HeroSlice
+	| RichTextSlice;
 
 /**
  * Content for Page documents
@@ -180,6 +184,253 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 >;
 
 export type AllDocumentTypes = PageDocument | SettingsDocument;
+
+/**
+ * Item in *CtaContentImage → Default → Primary → Buttons*
+ */
+export interface CtaContentImageSliceDefaultPrimaryButtonsItem {
+	/**
+	 * Button Link field in *CtaContentImage → Default → Primary → Buttons*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cta_content_image.default.primary.buttons[].button_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	button_link: prismic.LinkField;
+
+	/**
+	 * Button Label field in *CtaContentImage → Default → Primary → Buttons*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cta_content_image.default.primary.buttons[].button_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	button_label: prismic.KeyTextField;
+
+	/**
+	 * Button CTA field in *CtaContentImage → Default → Primary → Buttons*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: cta_content_image.default.primary.buttons[].button_cta
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	button_cta: prismic.BooleanField;
+}
+
+/**
+ * Item in *CtaContentImage → Reverse → Primary → Buttons*
+ */
+export interface CtaContentImageSliceReversePrimaryButtonsItem {
+	/**
+	 * Button Link field in *CtaContentImage → Reverse → Primary → Buttons*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cta_content_image.reverse.primary.buttons[].button_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	button_link: prismic.LinkField;
+
+	/**
+	 * Button Label field in *CtaContentImage → Reverse → Primary → Buttons*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cta_content_image.reverse.primary.buttons[].button_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	button_label: prismic.KeyTextField;
+
+	/**
+	 * Button CTA field in *CtaContentImage → Reverse → Primary → Buttons*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: cta_content_image.reverse.primary.buttons[].button_cta
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	button_cta: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *CtaContentImage → Default → Primary*
+ */
+export interface CtaContentImageSliceDefaultPrimary {
+	/**
+	 * BG Color field in *CtaContentImage → Default → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: dark
+	 * - **API ID Path**: cta_content_image.default.primary.bg_color
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	bg_color: prismic.SelectField<'dark' | 'light', 'filled'>;
+
+	/**
+	 * Numbering field in *CtaContentImage → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: 01, 02
+	 * - **API ID Path**: cta_content_image.default.primary.numbering
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	numbering: prismic.KeyTextField;
+
+	/**
+	 * Heading field in *CtaContentImage → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cta_content_image.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.RichTextField;
+
+	/**
+	 * Body field in *CtaContentImage → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cta_content_image.default.primary.body
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	body: prismic.RichTextField;
+
+	/**
+	 * Buttons field in *CtaContentImage → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cta_content_image.default.primary.buttons[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	buttons: prismic.GroupField<Simplify<CtaContentImageSliceDefaultPrimaryButtonsItem>>;
+
+	/**
+	 * Image field in *CtaContentImage → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cta_content_image.default.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for CtaContentImage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CtaContentImageSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<CtaContentImageSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Primary content in *CtaContentImage → Reverse → Primary*
+ */
+export interface CtaContentImageSliceReversePrimary {
+	/**
+	 * BG Color field in *CtaContentImage → Reverse → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: dark
+	 * - **API ID Path**: cta_content_image.reverse.primary.bg_color
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	bg_color: prismic.SelectField<'dark' | 'light', 'filled'>;
+
+	/**
+	 * Numbering field in *CtaContentImage → Reverse → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: 01, 02
+	 * - **API ID Path**: cta_content_image.reverse.primary.numbering
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	numbering: prismic.KeyTextField;
+
+	/**
+	 * Heading field in *CtaContentImage → Reverse → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cta_content_image.reverse.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.RichTextField;
+
+	/**
+	 * Body field in *CtaContentImage → Reverse → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cta_content_image.reverse.primary.body
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	body: prismic.RichTextField;
+
+	/**
+	 * Buttons field in *CtaContentImage → Reverse → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cta_content_image.reverse.primary.buttons[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	buttons: prismic.GroupField<Simplify<CtaContentImageSliceReversePrimaryButtonsItem>>;
+
+	/**
+	 * Image field in *CtaContentImage → Reverse → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cta_content_image.reverse.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Reverse variation for CtaContentImage Slice
+ *
+ * - **API ID**: `reverse`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CtaContentImageSliceReverse = prismic.SharedSliceVariation<
+	'reverse',
+	Simplify<CtaContentImageSliceReversePrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *CtaContentImage*
+ */
+type CtaContentImageSliceVariation = CtaContentImageSliceDefault | CtaContentImageSliceReverse;
+
+/**
+ * CtaContentImage Shared Slice
+ *
+ * - **API ID**: `cta_content_image`
+ * - **Description**: CtaContentImage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CtaContentImageSlice = prismic.SharedSlice<
+	'cta_content_image',
+	CtaContentImageSliceVariation
+>;
 
 /**
  * Item in *Hero → Default → Primary → Buttons*
@@ -390,6 +641,14 @@ declare module '@prismicio/client' {
 			SettingsDocumentData,
 			SettingsDocumentDataNavigationItem,
 			AllDocumentTypes,
+			CtaContentImageSlice,
+			CtaContentImageSliceDefaultPrimaryButtonsItem,
+			CtaContentImageSliceDefaultPrimary,
+			CtaContentImageSliceReversePrimaryButtonsItem,
+			CtaContentImageSliceReversePrimary,
+			CtaContentImageSliceVariation,
+			CtaContentImageSliceDefault,
+			CtaContentImageSliceReverse,
 			HeroSlice,
 			HeroSliceDefaultPrimaryButtonsItem,
 			HeroSliceDefaultPrimary,

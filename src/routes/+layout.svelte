@@ -4,7 +4,11 @@
 	import { repositoryName } from '$lib/prismicio';
 	import '@fontsource-variable/noto-sans';
 	import "../app.css"
+	// @ts-ignore
 	import Header from '$lib/components/Header.svelte';
+	// @ts-ignore
+	import HeaderDark from '$lib/components/HeaderDark.svelte';
+	// @ts-ignore
 	import Footer from '$lib/components/Footer.svelte';
 </script>
 
@@ -21,12 +25,10 @@
 		<meta name="twitter:card" content="summary_large_image" />
 	{/if}
 </svelte:head>
-	{#if $page.data.uid === "home"}
+	{#if $page.data.title === "The Local Real Estate Group"}
 		<Header settings={$page.data.settings} />
 	{:else}
-		<div class="text-black">
-			<Header settings={$page.data.settings} />
-		</div>
+		<HeaderDark settings={$page.data.settings} />
 	{/if}
 <main>
 	<slot />

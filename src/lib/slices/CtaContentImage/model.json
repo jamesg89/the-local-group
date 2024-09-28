@@ -18,10 +18,10 @@
             "label": "BG Color",
             "placeholder": "",
             "options": [
-              "Black",
-              "White"
+              "dark",
+              "light"
             ],
-            "default_value": "Black"
+            "default_value": "dark"
           }
         },
         "numbering": {
@@ -108,10 +108,10 @@
             "label": "BG Color",
             "placeholder": "",
             "options": [
-              "Black",
-              "White"
+              "dark",
+              "light"
             ],
-            "default_value": "Black"
+            "default_value": "dark"
           }
         },
         "numbering": {

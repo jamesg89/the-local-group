@@ -27,6 +27,9 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"cta_content_image": {
+							"type": "SharedSlice"
+						},
 						"minimal_header": {
 							"type": "SharedSlice"
 						},

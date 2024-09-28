@@ -5,11 +5,11 @@
 	export let slice: Content.MinimalHeaderSlice;
 </script>
 
-<section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}  class="relative bg-white">
-	<div class="container relative z-10 flex items-center text-white md:pr-16 lg:pr-24 pl-0">
-			{#if slice.primary.heading}
-				<h1 class="text-5xl mt-14  font-black md:text-7xl md:leading-snug">	
-					{slice.primary.heading}
+<section data-slice-type={slice.slice_type} data-slice-variation={slice.variation} class="bg-white mb-0 pb-0">
+ 	<div class="container pt-16 mb-0 pb-0 z-10 flex text-slate items-center pl-0">
+	  {#if slice.primary.heading}
+			<h1 class="text-6xl line-e mb-0 pb-2 pt-10 font-black md:text-8xl md:leading-none">
+				{slice.primary.heading}
 				</h1>
 			{/if}
 	</div>	
