@@ -1,0 +1,149 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"sub_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "herd",
+				"type": "Text"
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "stretch",
+				"type": "Text"
+			},
+			"core_values": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"value_heading",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "trade",
+									"type": "Text"
+								}
+							],
+							[
+								"value_body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Elit excepteur in occaecat magna labore pariatur ad elit amet eu. Excepteur incididunt et ipsum ea dolore ex sint eu ut."
+											}
+										}
+									]
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"value_body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Elit excepteur in occaecat magna labore pariatur ad elit amet eu. Excepteur incididunt et ipsum ea dolore ex sint eu ut.",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"value_heading",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "trade"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"value_heading",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "trade"
+								}
+							],
+							[
+								"value_body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Elit excepteur in occaecat magna labore pariatur ad elit amet eu. Excepteur incididunt et ipsum ea dolore ex sint eu ut.",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"value_heading",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "trade"
+								}
+							],
+							[
+								"value_body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Elit excepteur in occaecat magna labore pariatur ad elit amet eu. Excepteur incididunt et ipsum ea dolore ex sint eu ut.",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"primary_body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sint culpa excepteur quis consectetur aliquip aute culpa in Lorem pariatur dolor."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

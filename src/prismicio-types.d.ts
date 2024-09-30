@@ -5,6 +5,7 @@ import type * as prismic from '@prismicio/client';
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+	| CoreValuesSlice
 	| CenteredCtaSlice
 	| AwardLogoSectionSlice
 	| CtaContentImageSlice
@@ -416,6 +417,103 @@ type CenteredCtaSliceVariation = CenteredCtaSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type CenteredCtaSlice = prismic.SharedSlice<'centered_cta', CenteredCtaSliceVariation>;
+
+/**
+ * Item in *CoreValues → Default → Primary → Core Values*
+ */
+export interface CoreValuesSliceDefaultPrimaryCoreValuesItem {
+	/**
+	 * Value Heading field in *CoreValues → Default → Primary → Core Values*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: core_values.default.primary.core_values[].value_heading
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	value_heading: prismic.KeyTextField;
+
+	/**
+	 * Value Body field in *CoreValues → Default → Primary → Core Values*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: core_values.default.primary.core_values[].value_body
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	value_body: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *CoreValues → Default → Primary*
+ */
+export interface CoreValuesSliceDefaultPrimary {
+	/**
+	 * Sub Heading field in *CoreValues → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: core_values.default.primary.sub_heading
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	sub_heading: prismic.KeyTextField;
+
+	/**
+	 * Heading field in *CoreValues → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: core_values.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	heading: prismic.KeyTextField;
+
+	/**
+	 * Primary Body field in *CoreValues → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: core_values.default.primary.primary_body
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	primary_body: prismic.RichTextField;
+
+	/**
+	 * Core Values field in *CoreValues → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: core_values.default.primary.core_values[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	core_values: prismic.GroupField<Simplify<CoreValuesSliceDefaultPrimaryCoreValuesItem>>;
+}
+
+/**
+ * Default variation for CoreValues Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CoreValuesSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<CoreValuesSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *CoreValues*
+ */
+type CoreValuesSliceVariation = CoreValuesSliceDefault;
+
+/**
+ * CoreValues Shared Slice
+ *
+ * - **API ID**: `core_values`
+ * - **Description**: CoreValues
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CoreValuesSlice = prismic.SharedSlice<'core_values', CoreValuesSliceVariation>;
 
 /**
  * Item in *CtaContentImage → Default → Primary → Buttons*
@@ -883,6 +981,11 @@ declare module '@prismicio/client' {
 			CenteredCtaSliceDefaultPrimary,
 			CenteredCtaSliceVariation,
 			CenteredCtaSliceDefault,
+			CoreValuesSlice,
+			CoreValuesSliceDefaultPrimaryCoreValuesItem,
+			CoreValuesSliceDefaultPrimary,
+			CoreValuesSliceVariation,
+			CoreValuesSliceDefault,
 			CtaContentImageSlice,
 			CtaContentImageSliceDefaultPrimaryButtonsItem,
 			CtaContentImageSliceDefaultPrimary,

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Content } from '@prismicio/client';
 	import { clsx } from 'clsx';
-	import { PrismicImage, PrismicLink, PrismicRichText, PrismicText } from '@prismicio/svelte';
+	import { PrismicImage, PrismicRichText} from '@prismicio/svelte';
 	import Button from '$lib/components/Button.svelte';
 
 	export let slice: Content.CenteredCtaSlice;
