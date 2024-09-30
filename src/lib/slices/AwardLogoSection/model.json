@@ -1,0 +1,69 @@
+{
+  "id": "award_logo_section",
+  "type": "SharedSlice",
+  "name": "AwardLogoSection",
+  "description": "AwardLogoSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "bg_color": {
+          "type": "Select",
+          "config": {
+            "label": "BG Color",
+            "placeholder": "",
+            "options": [
+              "Slate",
+              "White",
+              "Gray"
+            ]
+          }
+        },
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "image_with_text": {
+          "type": "Group",
+          "config": {
+            "label": "Image With Text",
+            "repeat": true,
+            "fields": {
+              "item_heading": {
+                "type": "Text",
+                "config": {
+                  "label": "Item Heading",
+                  "placeholder": ""
+                }
+              },
+              "logo_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Logo Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "logo_texty": {
+                "type": "Text",
+                "config": {
+                  "label": "Logo Text",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

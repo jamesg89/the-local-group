@@ -27,6 +27,12 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"centered_cta": {
+							"type": "SharedSlice"
+						},
+						"award_logo_section": {
+							"type": "SharedSlice"
+						},
 						"cta_content_image": {
 							"type": "SharedSlice"
 						},

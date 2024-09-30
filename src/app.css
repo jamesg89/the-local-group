@@ -31,6 +31,8 @@ body {
 	}
 }
 
+section{@apply py-20;}
+
 @layer components {
 	.button {
         @apply py-5 px-4 box-border text-2xl align-middle text-center font-black inline-flex mr-5 mb-5 border-4 rounded-sm bg-white/0 transition-colors ease-in-out;

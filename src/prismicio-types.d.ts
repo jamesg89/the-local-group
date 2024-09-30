@@ -5,6 +5,8 @@ import type * as prismic from '@prismicio/client';
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+	| CenteredCtaSlice
+	| AwardLogoSectionSlice
 	| CtaContentImageSlice
 	| MinimalHeaderSlice
 	| HeroSlice
@@ -184,6 +186,236 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 >;
 
 export type AllDocumentTypes = PageDocument | SettingsDocument;
+
+/**
+ * Item in *AwardLogoSection → Default → Primary → Image With Text*
+ */
+export interface AwardLogoSectionSliceDefaultPrimaryImageWithTextItem {
+	/**
+	 * Item Heading field in *AwardLogoSection → Default → Primary → Image With Text*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: award_logo_section.default.primary.image_with_text[].item_heading
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	item_heading: prismic.KeyTextField;
+
+	/**
+	 * Logo Image field in *AwardLogoSection → Default → Primary → Image With Text*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: award_logo_section.default.primary.image_with_text[].logo_image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo_image: prismic.ImageField<never>;
+
+	/**
+	 * Logo Text field in *AwardLogoSection → Default → Primary → Image With Text*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: award_logo_section.default.primary.image_with_text[].logo_texty
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	logo_texty: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *AwardLogoSection → Default → Primary*
+ */
+export interface AwardLogoSectionSliceDefaultPrimary {
+	/**
+	 * BG Color field in *AwardLogoSection → Default → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: award_logo_section.default.primary.bg_color
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	bg_color: prismic.SelectField<'Slate' | 'White' | 'Gray'>;
+
+	/**
+	 * Heading field in *AwardLogoSection → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: award_logo_section.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	heading: prismic.KeyTextField;
+
+	/**
+	 * Image With Text field in *AwardLogoSection → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: award_logo_section.default.primary.image_with_text[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	image_with_text: prismic.GroupField<
+		Simplify<AwardLogoSectionSliceDefaultPrimaryImageWithTextItem>
+	>;
+}
+
+/**
+ * Default variation for AwardLogoSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AwardLogoSectionSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<AwardLogoSectionSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *AwardLogoSection*
+ */
+type AwardLogoSectionSliceVariation = AwardLogoSectionSliceDefault;
+
+/**
+ * AwardLogoSection Shared Slice
+ *
+ * - **API ID**: `award_logo_section`
+ * - **Description**: AwardLogoSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AwardLogoSectionSlice = prismic.SharedSlice<
+	'award_logo_section',
+	AwardLogoSectionSliceVariation
+>;
+
+/**
+ * Item in *CenteredCta → Default → Primary → Buttons*
+ */
+export interface CenteredCtaSliceDefaultPrimaryButtonsItem {
+	/**
+	 * Link field in *CenteredCta → Default → Primary → Buttons*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: centered_cta.default.primary.buttons[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+
+	/**
+	 * Link Text field in *CenteredCta → Default → Primary → Buttons*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: centered_cta.default.primary.buttons[].link_text
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	link_text: prismic.KeyTextField;
+
+	/**
+	 * CTA field in *CenteredCta → Default → Primary → Buttons*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: centered_cta.default.primary.buttons[].cta
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	cta: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *CenteredCta → Default → Primary*
+ */
+export interface CenteredCtaSliceDefaultPrimary {
+	/**
+	 * BG Color field in *CenteredCta → Default → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: centered_cta.default.primary.bg_color
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	bg_color: prismic.SelectField<'Slate' | 'White' | 'Gray'>;
+
+	/**
+	 * Numbered Item field in *CenteredCta → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: centered_cta.default.primary.number
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	number: prismic.KeyTextField;
+
+	/**
+	 * Heading field in *CenteredCta → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: centered_cta.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	heading: prismic.KeyTextField;
+
+	/**
+	 * Body field in *CenteredCta → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: centered_cta.default.primary.body
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	body: prismic.RichTextField;
+
+	/**
+	 * Image field in *CenteredCta → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: centered_cta.default.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * Buttons field in *CenteredCta → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: centered_cta.default.primary.buttons[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	buttons: prismic.GroupField<Simplify<CenteredCtaSliceDefaultPrimaryButtonsItem>>;
+}
+
+/**
+ * Default variation for CenteredCta Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CenteredCtaSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<CenteredCtaSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *CenteredCta*
+ */
+type CenteredCtaSliceVariation = CenteredCtaSliceDefault;
+
+/**
+ * CenteredCta Shared Slice
+ *
+ * - **API ID**: `centered_cta`
+ * - **Description**: CenteredCta
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CenteredCtaSlice = prismic.SharedSlice<'centered_cta', CenteredCtaSliceVariation>;
 
 /**
  * Item in *CtaContentImage → Default → Primary → Buttons*
@@ -641,6 +873,16 @@ declare module '@prismicio/client' {
 			SettingsDocumentData,
 			SettingsDocumentDataNavigationItem,
 			AllDocumentTypes,
+			AwardLogoSectionSlice,
+			AwardLogoSectionSliceDefaultPrimaryImageWithTextItem,
+			AwardLogoSectionSliceDefaultPrimary,
+			AwardLogoSectionSliceVariation,
+			AwardLogoSectionSliceDefault,
+			CenteredCtaSlice,
+			CenteredCtaSliceDefaultPrimaryButtonsItem,
+			CenteredCtaSliceDefaultPrimary,
+			CenteredCtaSliceVariation,
+			CenteredCtaSliceDefault,
 			CtaContentImageSlice,
 			CtaContentImageSliceDefaultPrimaryButtonsItem,
 			CtaContentImageSliceDefaultPrimary,

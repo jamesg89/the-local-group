@@ -7,7 +7,7 @@
 	export let slice: Content.CtaContentImageSlice;
 </script>
 
-<section data-slice-type={slice.slice_type} data-slice-variation={slice.variation} class="{clsx('py-10', slice.primary.bg_color=== "light" ? "bg-white" : "bg-slate text-white")}">
+<section data-slice-type={slice.slice_type} data-slice-variation={slice.variation} class="{clsx('', slice.primary.bg_color=== "light" ? "bg-white" : "bg-slate text-white")}">
 		<div class="{clsx('container flex flex-col relative z-10 gap-5 justify-around items-center h-full', slice.variation=== "reverse" ? " md:flex-row" : "md:flex-row-reverse space-x-reverse")}">
 			<div class="w-11/12 max-w-96 mt-8 md:mt-0">
 				{#if slice.primary.numbering}
@@ -35,7 +35,7 @@
 			</div>
 			{#if slice.primary.image}
 				<div class='w-11/12 max-w-96 md:w-1/2 opacity-90 p-0'>
-						<PrismicImage field={slice.primary.image} class="max-h-[500px] w-auto"  />
+						<PrismicImage field={slice.primary.image} class="max-h-[900px] w-auto"  />
 				</div>
 
 			{/if}
