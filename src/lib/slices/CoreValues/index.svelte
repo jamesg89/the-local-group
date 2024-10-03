@@ -6,7 +6,7 @@
 </script>
 
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation} class="bg-slate">
-	<div class="container text-white p-8 flex flex-col lg:flex-row lg:items-center gap-x-10">
+	<div class="container text-white py-8 flex flex-col lg:flex-row lg:items-center gap-x-10">
 		<!-- Left Section -->
 		<div class="lg:w-1/3 mb-8 lg:mb-0">
 			{#if slice.primary.sub_heading}
