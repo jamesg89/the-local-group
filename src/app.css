@@ -12,8 +12,8 @@ body {
 .container {
 	width: 92%;
 	margin: auto;
-	border-left: dashed slategray;
-	border-right: dashed slategray;
+	/*border-left: dashed slategray;
+	border-right: dashed slategray;*/
 }
 
 @media only screen and (min-width: 576px) {
