@@ -5,6 +5,7 @@ import type * as prismic from '@prismicio/client';
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+	| TeamMembersSlice
 	| TestimonialsSlice
 	| CoreValuesSlice
 	| CenteredCtaSlice
@@ -956,6 +957,113 @@ type RichTextSliceVariation = RichTextSliceDefault;
 export type RichTextSlice = prismic.SharedSlice<'rich_text', RichTextSliceVariation>;
 
 /**
+ * Item in *TeamMembers → Default → Primary → Team Members*
+ */
+export interface TeamMembersSliceDefaultPrimaryTeamMembersItem {
+	/**
+	 * Name field in *TeamMembers → Default → Primary → Team Members*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: team_members.default.primary.team_members[].name
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	name: prismic.KeyTextField;
+
+	/**
+	 * Job Title field in *TeamMembers → Default → Primary → Team Members*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: team_members.default.primary.team_members[].job_title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	job_title: prismic.KeyTextField;
+
+	/**
+	 * Contact Info field in *TeamMembers → Default → Primary → Team Members*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: team_members.default.primary.team_members[].contact
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	contact: prismic.KeyTextField;
+
+	/**
+	 * Biography field in *TeamMembers → Default → Primary → Team Members*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: team_members.default.primary.team_members[].biography
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	biography: prismic.RichTextField;
+
+	/**
+	 * Head Shot field in *TeamMembers → Default → Primary → Team Members*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: team_members.default.primary.team_members[].head_shot
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	head_shot: prismic.ImageField<never>;
+
+	/**
+	 * Number field in *TeamMembers → Default → Primary → Team Members*
+	 *
+	 * - **Field Type**: Number
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: team_members.default.primary.team_members[].number
+	 * - **Documentation**: https://prismic.io/docs/field#number
+	 */
+	number: prismic.NumberField;
+}
+
+/**
+ * Primary content in *TeamMembers → Default → Primary*
+ */
+export interface TeamMembersSliceDefaultPrimary {
+	/**
+	 * Team Members field in *TeamMembers → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: team_members.default.primary.team_members[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	team_members: prismic.GroupField<Simplify<TeamMembersSliceDefaultPrimaryTeamMembersItem>>;
+}
+
+/**
+ * Default variation for TeamMembers Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamMembersSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<TeamMembersSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *TeamMembers*
+ */
+type TeamMembersSliceVariation = TeamMembersSliceDefault;
+
+/**
+ * TeamMembers Shared Slice
+ *
+ * - **API ID**: `team_members`
+ * - **Description**: TeamMembers
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamMembersSlice = prismic.SharedSlice<'team_members', TeamMembersSliceVariation>;
+
+/**
  * Item in *Testimonials → Default → Primary → Items*
  */
 export interface TestimonialsSliceDefaultPrimaryItemsItem {
@@ -1105,6 +1213,11 @@ declare module '@prismicio/client' {
 			RichTextSliceDefaultPrimary,
 			RichTextSliceVariation,
 			RichTextSliceDefault,
+			TeamMembersSlice,
+			TeamMembersSliceDefaultPrimaryTeamMembersItem,
+			TeamMembersSliceDefaultPrimary,
+			TeamMembersSliceVariation,
+			TeamMembersSliceDefault,
 			TestimonialsSlice,
 			TestimonialsSliceDefaultPrimaryItemsItem,
 			TestimonialsSliceDefaultPrimary,

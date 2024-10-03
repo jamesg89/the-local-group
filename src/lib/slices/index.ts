@@ -7,6 +7,7 @@ import CtaContentImage from './CtaContentImage/index.svelte';
 import Hero from './Hero/index.svelte';
 import MinimalHeader from './MinimalHeader/index.svelte';
 import RichText from './RichText/index.svelte';
+import TeamMembers from './TeamMembers/index.svelte';
 import Testimonials from './Testimonials/index.svelte';
 
 export const components = {
@@ -17,5 +18,6 @@ export const components = {
 	hero: Hero,
 	minimal_header: MinimalHeader,
 	rich_text: RichText,
+	team_members: TeamMembers,
 	testimonials: Testimonials
 };

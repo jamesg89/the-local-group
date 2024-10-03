@@ -1,0 +1,91 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"team_members": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "driving",
+									"type": "Text"
+								}
+							],
+							[
+								"job_title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "desert",
+									"type": "Text"
+								}
+							],
+							[
+								"contact",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "fix",
+									"type": "Text"
+								}
+							],
+							[
+								"biography",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Fugiat deserunt ullamco deserunt elit et aliqua ex anim fugiat id excepteur ullamco."
+											}
+										}
+									]
+								}
+							],
+							[
+								"head_shot",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
+										"width": 4000,
+										"height": 4000
+									},
+									"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
+									"width": 4000,
+									"height": 4000,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"number",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "89",
+									"type": "Number"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

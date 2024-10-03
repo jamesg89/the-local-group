@@ -36,7 +36,7 @@
     height: 80px;
     display: flex;
     align-items: center;
-    transition: background-color 0.6s ease, border 0.6s ease, color 0.6s ease;
+    transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
     padding: 0 20px;
     z-index: 80;
     color: black; /* Default text color */
