@@ -2,8 +2,8 @@
 	import type { Content } from '@prismicio/client';
 	import { clsx } from 'clsx';
 	import { PrismicImage, PrismicLink, PrismicRichText, PrismicText } from '@prismicio/svelte';
-	import Button from '$lib/components/Button.svelte';
-	
+	import Button from '$lib/components/Button2.svelte';
+	import { slice } from '../AwardLogoSection/index.svelte';
 	export let slice: Content.CtaContentImageSlice;
 </script>
 
@@ -27,19 +27,7 @@
 				{/if}
 				<div class="mt-8">
 					{#each slice.primary.buttons as item}
-						{#if item.button_cta === true}
-						<Button styles="{clsx(item.button_cta && 'cta', slice.primary.bg_color === "light"  ?  'dark' : slice.primary.bg_color === 'dark' ? 'light' : 'light')}" link="{item.button_link}">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFA500" class="size-8 svgthick">
-									<path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
-								</svg>
-							{item.button_label}
-																						
-						</Button>
-						{:else}
-							<Button styles="light" link={item.button_link}>
-								{item.button_label}
-							</Button>
-						{/if}
+						<Button {...item} />
 					{/each}
 				</div>
 			</div>
@@ -47,7 +35,6 @@
 				<div class='w-full min-w-[480px] md:w-1/2 opacity-90 p-0'>
 						<PrismicImage field={slice.primary.image} class="max-h-[900px] w-auto"  />
 				</div>
-
 			{/if}
 			</div>
 </section>

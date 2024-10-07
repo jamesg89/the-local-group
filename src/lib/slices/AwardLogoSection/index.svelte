@@ -8,17 +8,17 @@
 </script>
 
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation} class="{clsx('', slice.primary.bg_color=== "White" ? "bg-white" : slice.primary.bg_color === 'Slate' ? 'bg-slate' :  slice.primary.bg_color === 'Gray' ? 'bg-gray-default' :'bg-white')}">
-		<div class="container flex flex-col relative z-10 justify-around items-center h-full text-center">
-			<div class="mt-8 md:mt-0">
+		<div class="container flex flex-col relative z-10 justify-between items-center h-full text-center">
+			<div class="mt-8 md:mt-0 w-full">
 				{#if slice.primary.heading}
 					<h2 class="text-5xl font-bold mb-12">	
 						{slice.primary.heading}
 					</h2>
 				{/if}
 
-					<div class="flex flex-row gap-10 w-full justify-evenly flex-wrap align-bottom">
+					<div class="flex flex-row gap-10 w-full justify-between flex-wrap align-bottom">
 						{#each slice.primary.image_with_text as item}
-							<div class="flex flex-1 flex-col flex-grow gap-4 align-bottom text-center min-w-44">
+							<div class="flex flex-1 flex-col gap-4 align-bottom text-center min-w-44 max-w-48">
 								{#if item.item_heading}
 									<h3 class="text-3xl font-bold text-center">	
 										{item.item_heading}

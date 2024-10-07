@@ -8,8 +8,8 @@
 </script>
 
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation} class="{clsx('', slice.primary.bg_color=== "White" ? "bg-white" : slice.primary.bg_color === 'Slate' ? 'bg-slate text-white' :  slice.primary.bg_color === 'Gray' ? 'bg-gray-default' :'bg-white')}">
-		<div class="container flex flex-col relative z-10 justify-around items-center h-full text-center">
-			<div class="mt-8 md:mt-0 mx-auto">
+		<div class="container flex flex-col relative z-10 justify-between items-center h-full text-center">
+			<div class="mt-8 md:mt-0 mx-0 px-0">
 				{#if slice.primary.number}
 					<h3 class="text-lg">	
 						{slice.primary.number}

@@ -12,6 +12,7 @@ body {
 .container {
 	width: 92%;
 	margin: auto;
+	@apply sm:overflow-x-hidden;
 	/*border-left: dashed slategray;
 	border-right: dashed slategray;*/
 }
@@ -19,7 +20,7 @@ body {
 @media only screen and (min-width: 576px) {
 	.signal-line {
 		--rotation: 0deg;
-	}
+	} 
 	.container {
 		width: 540;
 	}
@@ -41,12 +42,15 @@ section{@apply py-20;}
         @apply text-slate border-slate hover:bg-gray-default;
 	}
 	.cta.dark{
-        @apply text-slate bg-gray-default/100 border-slate hover:bg-gray-light;
+        @apply text-white bg-slate border-slate hover:bg-gray-dark hover:border-gray-dark;
 	}
 	.light{
         @apply text-white border-white hover:bg-gray-default;
 	}
 	.cta.light {
-        @apply text-white border-white bg-gray-dark/100 hover:bg-gray-default;
+        @apply text-slate bg-white/100 hover:bg-gray-default hover:border-gray-default;
+	}
+	.cta{
+		vertical-align: middle;
 	}
   }
