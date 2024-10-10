@@ -57,7 +57,7 @@
 
 <header class="{scrolled ? 'transparent' : 'default'} fixed w-full transparent backdrop-blur-sm duration-300 z-50 transition-transform ease-in">
   <!-- Add your navigation items here -->
-  <nav class="container mx-auto flex flex-col md:flex-row justify-between py-4" aria-label="header">
+  <nav class="container flex flex-col md:flex-row justify-between py-4" aria-label="header">
       <a href="/"><WordMark Clr={scrolled ? "#fff" : "#222222"} /></a>
       <span class="sr-only">{settings.data.site_title} home page</span>
           <ul class="flex gap-6">

@@ -12,23 +12,19 @@ body {
 .container {
 	width: 92%;
 	margin: auto;
-	@apply sm:overflow-x-hidden;
-	/*border-left: dashed slategray;
-	border-right: dashed slategray;*/
+	@apply overflow-x-hidden;
 }
+
 
 @media only screen and (min-width: 576px) {
 	.signal-line {
 		--rotation: 0deg;
-	} 
-	.container {
-		width: 540;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
 	.container {
-		width: 1140px;
+		max-width: 1140px;
 	}
 }
 
@@ -36,19 +32,19 @@ section{@apply py-20;}
 
 @layer components {
 	.button {
-        @apply py-5 px-4 box-border text-2xl align-middle text-center font-black inline-flex mr-5 mb-5 border-4 rounded-sm bg-white/0 transition-colors ease-in-out;
+        @apply py-5 px-4 box-border text-2xl align-middle text-center font-black inline-flex mr-5 mb-5 border-4 rounded-sm bg-white/0 transition-colors duration-500 ease-in-out;
     }
 	.dark{
-        @apply text-slate border-slate hover:bg-gray-default;
+        @apply text-slate border-slate hover:bg-slate hover:text-white;
 	}
 	.cta.dark{
-        @apply text-white bg-slate border-slate hover:bg-gray-dark hover:border-gray-dark;
+        @apply text-white bg-slate border-slate hover:bg-white hover:border-slate hover:text-slate;
 	}
 	.light{
-        @apply text-white border-white hover:bg-gray-default;
+        @apply text-white border-white hover:bg-white hover:text-slate;
 	}
 	.cta.light {
-        @apply text-slate bg-white/100 hover:bg-gray-default hover:border-gray-default;
+        @apply text-slate bg-white/100 hover:bg-slate hover:text-white hover:border-white;
 	}
 	.cta{
 		vertical-align: middle;
