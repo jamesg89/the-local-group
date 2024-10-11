@@ -16,7 +16,7 @@
 					</h2>
 				{/if}
 
-					<div class="flex flex-row gap-10 w-full justify-between flex-wrap align-bottom">
+					<div class="flex flex-col md:flex-row gap-10 w-full items-center justify-center lg:justify-between px-0 mx-auto flex-wrap align-bottom">
 						{#each slice.primary.image_with_text as item}
 							<div class="flex flex-1 flex-col gap-4 align-bottom text-center min-w-44 max-w-48">
 								{#if item.item_heading}

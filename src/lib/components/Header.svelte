@@ -76,7 +76,7 @@
         </ul>
     <!-- Hamburger Button (Mobile) -->
     <div class="md:hidden flex ml-auto items-center">
-      <button on:click={toggleMenu} class="{home ? 'hover:text-slate text-white' : 'hover:text-gray-default text-slate'} focus:outline-none">
+      <button on:click={toggleMenu} class="{home ? 'hover:text-slate focus:text-white text-white' : 'hover:text-gray-default text-slate'} ${isOpen ? 'text-gray-light' : 'text-white'} focus:outline-none">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
@@ -107,7 +107,7 @@
     <!-- Desktop Menu -->
       {#each settings.data.navigation as item (item.label)}
         <div class="hover:text-slate text-white text-lg p-4">
-          <PrismicLink field={item.link} class="inline-flex items-center">
+          <PrismicLink field={item.link} on:click={toggleMenu} class="inline-flex items-center">
             {item.label}
           </PrismicLink>
         </div>
