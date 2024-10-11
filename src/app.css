@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/*
+	Refer to tailwind.config.js for custom colors
+*/
 * {
 	font-family: 'Noto Sans Variable', sans-serif;
 }
@@ -31,6 +34,11 @@ body {
 section{@apply py-20;}
 
 @layer components {
+	/* Following CSS all apply to buttons. 
+		Dark = a button that exists on a dark background
+		Light = a button that exists on a light background
+		CTA = inverts the color scheme of the regular light/dark buttons to provide contrast
+	*/
 	.button {
         @apply py-5 px-4 box-border text-2xl align-middle text-center font-black inline-flex mr-5 mb-5 border-4 rounded-sm bg-white/0 transition-colors duration-500 ease-in-out;
     }

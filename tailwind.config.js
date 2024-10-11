@@ -10,7 +10,7 @@ export default {
       },
       slate: '#222222',
       gold: '#B08C38',
-      white: '#ffffff',
+      white: '#F3F4F6',
     },
     extend: {},
   },

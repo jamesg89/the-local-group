@@ -7,12 +7,11 @@
 	// @ts-ignore
 	import Header from '$lib/components/Header.svelte';
 	// @ts-ignore
-	import HeaderDark from '$lib/components/HeaderDark.svelte';
-	// @ts-ignore
 	import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <svelte:head>
+	<!-- Meta info provided through 'settings' if not defined for the specific page within prismic -->
 	<title>{$page.data.title}</title>
 	{#if $page.data.meta_description}
 		<meta name="description" content={$page.data.meta_description} />
@@ -25,11 +24,12 @@
 		<meta name="twitter:card" content="summary_large_image" />
 	{/if}
 </svelte:head>
-	{#if $page.data.title === "The Local Real Estate Group"}
-		<Header settings={$page.data.settings} />
-	{:else}
-		<HeaderDark settings={$page.data.settings} />
-	{/if}
+
+<Header 
+settings={$page.data.settings} 
+home={$page.data.title === "The Local Real Estate Group" ? true : false} 
+/>
+
 <main>
 	<slot />
 </main>
