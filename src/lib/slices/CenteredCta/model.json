@@ -21,7 +21,8 @@
               "Slate",
               "White",
               "Gray"
-            ]
+            ],
+            "default_value": "Slate"
           }
         },
         "number": {
@@ -61,23 +62,23 @@
             "label": "Buttons",
             "repeat": true,
             "fields": {
-              "link": {
+              "button_link": {
                 "type": "Link",
                 "config": {
-                  "label": "Link",
+                  "label": "Button Link",
                   "placeholder": "",
                   "allowTargetBlank": false,
                   "select": null
                 }
               },
-              "link_text": {
+              "button_label": {
                 "type": "Text",
                 "config": {
                   "label": "Link Text",
                   "placeholder": ""
                 }
               },
-              "cta": {
+              "button_cta": {
                 "type": "Boolean",
                 "config": {
                   "label": "CTA",

@@ -5,7 +5,7 @@
 		"primary": {
 			"bg_color": {
 				"__TYPE__": "FieldContent",
-				"value": "dark",
+				"value": "Slate",
 				"type": "Select"
 			},
 			"heading": {
@@ -102,7 +102,7 @@
 		"primary": {
 			"bg_color": {
 				"__TYPE__": "FieldContent",
-				"value": "dark",
+				"value": "Slate",
 				"type": "Select"
 			},
 			"numbering": {

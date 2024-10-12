@@ -32,9 +32,7 @@
 				{/if}
 					<div class="flex flex-row gap-x-10 w-full justify-center flex-wrap align-bottom">
 						{#each slice.primary.buttons as item}
-							<Button styles="{clsx(item.cta && 'cta', slice.primary.bg_color === "White"  ?  'dark' : slice.primary.bg_color === 'Slate' ? 'light' : 'light')}" link="{item.link}">
-								{item.link_text}
-							</Button>
+							<Button {...item} bg_color={slice.primary.bg_color} />
 						{/each}
 					</div>
 			</div>

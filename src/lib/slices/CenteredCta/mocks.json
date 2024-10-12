@@ -59,25 +59,25 @@
 						"__TYPE__": "GroupItemContent",
 						"value": [
 							[
-								"link",
+								"button_link",
 								{
 									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
-										"url": "https://prismic.io"
+										"url": "http://twitter.com"
 									}
 								}
 							],
 							[
-								"link_text",
+								"button_label",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "care",
+									"value": "hat",
 									"type": "Text"
 								}
 							],
 							[
-								"cta",
+								"button_cta",
 								{
 									"__TYPE__": "BooleanContent",
 									"value": true

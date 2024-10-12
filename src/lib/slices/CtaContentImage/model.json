@@ -18,10 +18,11 @@
             "label": "BG Color",
             "placeholder": "",
             "options": [
-              "dark",
-              "light"
+              "Slate",
+              "White",
+              "Gray"
             ],
-            "default_value": "dark"
+            "default_value": "Slate"
           }
         },
         "numbering": {
@@ -108,10 +109,11 @@
             "label": "BG Color",
             "placeholder": "",
             "options": [
-              "dark",
-              "light"
+              "Slate",
+              "White",
+              "Gray"
             ],
-            "default_value": "dark"
+            "default_value": "Slate"
           }
         },
         "numbering": {

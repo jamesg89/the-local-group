@@ -297,24 +297,24 @@ export type AwardLogoSectionSlice = prismic.SharedSlice<
  */
 export interface CenteredCtaSliceDefaultPrimaryButtonsItem {
 	/**
-	 * Link field in *CenteredCta → Default → Primary → Buttons*
+	 * Button Link field in *CenteredCta → Default → Primary → Buttons*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: centered_cta.default.primary.buttons[].link
+	 * - **API ID Path**: centered_cta.default.primary.buttons[].button_link
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	link: prismic.LinkField;
+	button_link: prismic.LinkField;
 
 	/**
 	 * Link Text field in *CenteredCta → Default → Primary → Buttons*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: centered_cta.default.primary.buttons[].link_text
+	 * - **API ID Path**: centered_cta.default.primary.buttons[].button_label
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
-	link_text: prismic.KeyTextField;
+	button_label: prismic.KeyTextField;
 
 	/**
 	 * CTA field in *CenteredCta → Default → Primary → Buttons*
@@ -322,10 +322,10 @@ export interface CenteredCtaSliceDefaultPrimaryButtonsItem {
 	 * - **Field Type**: Boolean
 	 * - **Placeholder**: *None*
 	 * - **Default Value**: false
-	 * - **API ID Path**: centered_cta.default.primary.buttons[].cta
+	 * - **API ID Path**: centered_cta.default.primary.buttons[].button_cta
 	 * - **Documentation**: https://prismic.io/docs/field#boolean
 	 */
-	cta: prismic.BooleanField;
+	button_cta: prismic.BooleanField;
 }
 
 /**
@@ -337,10 +337,11 @@ export interface CenteredCtaSliceDefaultPrimary {
 	 *
 	 * - **Field Type**: Select
 	 * - **Placeholder**: *None*
+	 * - **Default Value**: Slate
 	 * - **API ID Path**: centered_cta.default.primary.bg_color
 	 * - **Documentation**: https://prismic.io/docs/field#select
 	 */
-	bg_color: prismic.SelectField<'Slate' | 'White' | 'Gray'>;
+	bg_color: prismic.SelectField<'Slate' | 'White' | 'Gray', 'filled'>;
 
 	/**
 	 * Numbered Item field in *CenteredCta → Default → Primary*
@@ -598,11 +599,11 @@ export interface CtaContentImageSliceDefaultPrimary {
 	 *
 	 * - **Field Type**: Select
 	 * - **Placeholder**: *None*
-	 * - **Default Value**: dark
+	 * - **Default Value**: Slate
 	 * - **API ID Path**: cta_content_image.default.primary.bg_color
 	 * - **Documentation**: https://prismic.io/docs/field#select
 	 */
-	bg_color: prismic.SelectField<'dark' | 'light', 'filled'>;
+	bg_color: prismic.SelectField<'Slate' | 'White' | 'Gray', 'filled'>;
 
 	/**
 	 * Numbering field in *CtaContentImage → Default → Primary*
@@ -677,11 +678,11 @@ export interface CtaContentImageSliceReversePrimary {
 	 *
 	 * - **Field Type**: Select
 	 * - **Placeholder**: *None*
-	 * - **Default Value**: dark
+	 * - **Default Value**: Slate
 	 * - **API ID Path**: cta_content_image.reverse.primary.bg_color
 	 * - **Documentation**: https://prismic.io/docs/field#select
 	 */
-	bg_color: prismic.SelectField<'dark' | 'light', 'filled'>;
+	bg_color: prismic.SelectField<'Slate' | 'White' | 'Gray', 'filled'>;
 
 	/**
 	 * Numbering field in *CtaContentImage → Reverse → Primary*
