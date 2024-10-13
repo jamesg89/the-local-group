@@ -2,6 +2,7 @@
 	import type { Content } from '@prismicio/client';
 	import { PrismicImage, PrismicLink, PrismicRichText, PrismicText } from '@prismicio/svelte';
 	import Button from '$lib/components/Button.svelte';
+	import { asLink } from '@prismicio/helpers';
 
 	export let slice: Content.HeroSlice;
 </script>
@@ -22,7 +23,7 @@
 				{/if}
 				<div class="mt-8 lg:max-w-2xl">
 					{#each slice.primary.buttons as item}
-						<Button {...item} /><!--If background is changeable, need to separately pass in bg_color to button (as in CTA slices)-->
+						<Button {...item} button_link={asLink(item.button_link)} /><!--If background is changeable, need to separately pass in bg_color to button (as in CTA slices)-->
 					{/each}
 				</div>
 			</div>

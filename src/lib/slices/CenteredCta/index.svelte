@@ -3,6 +3,7 @@
 	import { clsx } from 'clsx';
 	import { PrismicImage, PrismicRichText} from '@prismicio/svelte';
 	import Button from '$lib/components/Button.svelte';
+	import { asLink } from '@prismicio/helpers';
 
 	export let slice: Content.CenteredCtaSlice;
 </script>
@@ -32,7 +33,11 @@
 				{/if}
 					<div class="flex flex-row gap-x-10 w-full justify-center flex-wrap align-bottom">
 						{#each slice.primary.buttons as item}
-							<Button {...item} bg_color={slice.primary.bg_color} />
+							<Button 
+								{...item} 
+								bg_color={slice.primary.bg_color} 					
+    							button_link={asLink(item.button_link)}
+							/>
 						{/each}
 					</div>
 			</div>

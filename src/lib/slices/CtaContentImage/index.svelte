@@ -3,6 +3,7 @@
 	import { clsx } from 'clsx';
 	import { PrismicImage, PrismicLink, PrismicRichText, PrismicText } from '@prismicio/svelte';
 	import Button from '$lib/components/Button.svelte';
+	import { asLink } from '@prismicio/helpers';
 	
 	export let slice: Content.CtaContentImageSlice;
 </script>
@@ -27,7 +28,11 @@
 				{/if}
 				<div class="mt-8">
 					{#each slice.primary.buttons as item}
-						<Button {...item} bg_color={slice.primary.bg_color} />
+						<Button 
+							{...item} 
+							bg_color={slice.primary.bg_color} 					
+							button_link={asLink(item.button_link)}
+						/>
 					{/each}
 				</div>
 			</div>
