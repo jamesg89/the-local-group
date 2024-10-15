@@ -52,13 +52,17 @@
     color:white;
   }
 
+  header.transparent li {
+    color:white;
+  }
+
   header.default {
     background-color: transparent;
     border-bottom: none;
   }
 </style>
 
-<header class="{scrolled ? 'transparent' : 'default'} fixed top-0 w-full z-50 backdrop-blur-sm duration-300 transition-transform ease-in">
+<header class="{scrolled ? 'transparent' : 'default'} {home ? 'hover:text-slate text-white' : 'hover:text-gray-default text-slate'} fixed top-0 w-full z-50 duration-300 transition-transform ease-in">
   <nav class="container flex items-center justify-between py-4" aria-label="header">
     <!-- Logo -->
         <a href="/"><WordMark Clr={scrolled ? "#fff" : (home ? "#fff" : "#222222")} /></a>
