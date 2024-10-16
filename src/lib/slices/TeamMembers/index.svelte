@@ -21,8 +21,8 @@
     }
 </script>
 
-<div class="container mx-auto p-6 flex flex-col gap-6">
-    <div class="team-members mx-auto w-11/12 flex flex-wrap justify-between gap-6 max-w-[960px]">
+<div class="container mx-0 py-6 flex flex-col gap-6">
+    <div class="team-members w-full flex flex-wrap justify-between gap-6">
         {#each slice.primary.team_members as item}
             <div
                 class="member-card flex-1 min-w-[45%] md:min-w-[30%] relative h-80 transition-all duration-300 ease-in-out cursor-pointer"
@@ -48,7 +48,7 @@
 
 
     {#if selectedBio}
-        <div class="bio-panel px-36 md:px-10 on:click|stopPropagation> transform transition-transform duration-[5000ms] ease-in z-50 fixed top-0 right-0 h-full w-full md:w-[420px] bg-slate text-white p-6"
+        <div class="bio-panel w-full my-auto on:click|stopPropagation> transform transition-transform duration-[5000ms] ease-in z-50 fixed top-0 right-0 h-full md:w-[420px] bg-slate text-white p-6"
             on:click={closeBio}
             class:translate-x-full={!selectedBio}
             class:translate-x-0={selectedBio}
@@ -56,8 +56,8 @@
             tabindex="0"
             role="button"
             aria-label="Close bio panel">
-            <div class="bio-content mt-20 relative w-full">
-                <img class="object-cover object-top rounded-lg drop-shadow-md h-80 w-80 md:h-60 my-6 md:w-60" alt="Team Member headshot" src="{slice.primary.team_members.find(member => member.name === selectedBio)?.head_shot.url}" />
+            <div class="bio-content mx-auto w-80 md:w-72 align-middle">
+                <img class="object-cover object-top rounded-lg drop-shadow-md h-80 w-80 md:h-60 my-6 md:w-72" alt="Team Member headshot" src="{slice.primary.team_members.find(member => member.name === selectedBio)?.head_shot.url}" />
                 <h3 class="text-2xl font-bold">{slice.primary.team_members.find(member => member.name === selectedBio)?.name}</h3>
                 <p class="text-sm pt-6">
                     <PrismicRichText field={slice.primary.team_members.find(member => member.name === selectedBio)?.biography} />
@@ -122,27 +122,20 @@
         opacity: 1;
     }
 
-    .bio-panel {
-        transform: translateX(100%); /* Initially hidden off-screen */
+    .bio-panel.translate-x-0 {
+        transform: translateX(0%); /* Slide in */
         transition: transform 5s ease-in-out; /* 5s transition */
     }
 
-    .bio-panel.translate-x-0 {
-        transform: translateX(0); /* Slide in */
-    }
-
     .bio-panel.translate-x-full {
-        transform: translateX(100%);
+        transform: translateX(50%);
+        transition: transform 5s ease-in-out; /* 5s transition */
     }
 
     .bio-panel {
-        transition: transform 5s ease-in; /* Ease-in effect for 5 seconds */
     }
 
     .bio-content {
-        position: relative;
-        height: 100%;
-        overflow-y: auto;
     }
 
     .bio-content button {
@@ -156,7 +149,8 @@
         color: #fff;
     }
 
-    .bio-panel h3 {
+    .bio-panel h1, h2, h3, h4, h5 {
         color: white;
+        padding-top: 4px;
     }
 </style>

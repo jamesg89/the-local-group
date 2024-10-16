@@ -5,12 +5,14 @@
 	Refer to tailwind.config.js for custom colors
 */
 * {
-	font-family: 'Noto Sans Variable', sans-serif;
+	font-family: 'Open Sans Variable', sans-serif;
 }
 
 body {
 	@apply bg-slate;
 }
+
+h2, h3, h4, h5{ font-weight: 900;}
 
 .container {
 	width: 92%;

@@ -2,7 +2,7 @@
 	import { PrismicPreview } from '@prismicio/svelte/kit';
 	import { page } from '$app/stores';
 	import { repositoryName } from '$lib/prismicio';
-	import '@fontsource-variable/noto-sans';
+	import '@fontsource-variable/open-sans';
 	import "../app.css"
 	// @ts-ignore
 	import Header from '$lib/components/Header.svelte';
