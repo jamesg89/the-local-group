@@ -10,11 +10,15 @@
 	import Wordmark from "./WordMark.svelte";
 	// @ts-ignore
 	import Tmg from "./Tmg.svelte";
+    import ContactForm from "./ContactForm.svelte";
     /** @type {import("@prismicio/client").Content.SettingsDocument}*/
     export let settings;
 </script>
 
     <footer class="py-10 text-white">
+        <div class="container mb-4 flex flex-col md:flex-row justify-between mx-auto">
+            <ContactForm />
+        </div>
         <div class="container mb-4 flex flex-col md:flex-row justify-between mx-auto">
             <hr class="w-full" />
         </div>
