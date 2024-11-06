@@ -48,21 +48,40 @@
 
 
     {#if selectedBio}
-        <div class="bio-panel w-full my-auto on:click|stopPropagation> transform transition-transform duration-[5000ms] ease-in z-50 fixed top-0 right-0 h-full md:w-[420px] bg-slate text-white p-6"
-            on:click={closeBio}
-            class:translate-x-full={!selectedBio}
-            class:translate-x-0={selectedBio}
-            on:keydown={(e) => handleKeyDown(e, closeBio)}
-            tabindex="0"
-            role="button"
-            aria-label="Close bio panel">
-            <div class="bio-content mx-auto w-80 md:w-72 align-middle">
-                <img class="object-cover object-top rounded-lg drop-shadow-md h-80 w-80 md:h-60 my-6 md:w-72" alt="Team Member headshot" src="{slice.primary.team_members.find(member => member.name === selectedBio)?.head_shot.url}" />
+    <div 
+        class="bio-panel w-full transform transition-transform duration-[500ms] ease-in z-50 top-0 right-0 fixed h-screen md:w-[420px] bg-slate text-white p-6 flex justify-center items-center"
+        on:click={closeBio} 
+        class:translate-x-full={!selectedBio}
+        class:translate-x-0={selectedBio}
+        tabindex="0"
+        role="button"
+        aria-label="Close bio panel"
+        on:keydown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                closeBio();
+            }
+        }}
+    >
+            <!-- Bio content wrapper with stopPropagation -->
+            <div class="bio-content m-auto w-80 md:w-72 relative" on:click|stopPropagation
+                tabindex="0"
+                role="button"
+                aria-label="Close bio panel"
+                on:keydown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        closeBio();
+                    }
+                }}
+            >
+                <img class="object-cover object-top rounded-lg drop-shadow-md h-80 w-80 md:h-60 my-6 md:w-72" 
+                    alt="Team Member headshot" 
+                    src="{slice.primary.team_members.find(member => member.name === selectedBio)?.head_shot.url}" />
                 <h3 class="text-2xl font-bold">{slice.primary.team_members.find(member => member.name === selectedBio)?.name}</h3>
                 <p class="text-sm pt-6">
                     <PrismicRichText field={slice.primary.team_members.find(member => member.name === selectedBio)?.biography} />
                 </p>
-                <button class="absolute top-20 right-2 text-gray-400" on:click={closeBio}>X</button>
+                <!-- Close button -->
+                <button class="absolute top-4 right-4 text-gray-400" on:click={closeBio}>X</button>
             </div>
         </div>
     {/if}
@@ -120,22 +139,6 @@
     .member-card:hover .overlay,
     .member-card:focus .overlay {
         opacity: 1;
-    }
-
-    .bio-panel.translate-x-0 {
-        transform: translateX(0%); /* Slide in */
-        transition: transform 5s ease-in-out; /* 5s transition */
-    }
-
-    .bio-panel.translate-x-full {
-        transform: translateX(50%);
-        transition: transform 5s ease-in-out; /* 5s transition */
-    }
-
-    .bio-panel {
-    }
-
-    .bio-content {
     }
 
     .bio-content button {

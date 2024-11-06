@@ -7,7 +7,7 @@
 	export let slice: Content.HeroSlice;
 </script>
 
-<section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}  class="relative h-screen bg-cover bg-center" style="background-image: url('/static/assets/vancouver-black-and-white-local-real-estate-group-banner.jpg');">
+<section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}  class="relative h-screen bg-cover bg-center" style="background-image: url('{slice.primary.image.url}');">
 		<div class="absolute inset-0 bg-slate/50"></div>
 		<div class="container relative z-10 flex items-center h-full text-white pl-0">
 			<div class="w-full text-left">
