@@ -19,10 +19,10 @@
         <div class="container mb-4 flex flex-col md:flex-row justify-between mx-auto">
             <ContactForm />
         </div>
-        <div class="container mb-4 flex flex-col md:flex-row justify-between mx-auto">
+        <div class="container pt-12 mb-4 flex flex-col md:flex-row justify-between mx-auto">
             <hr class="w-full" />
         </div>
-        <div class="container py-4 mx-auto flex flex-col md:flex-row justify-between">
+        <div class="container pt-12 pb-4 mx-auto flex flex-col md:flex-row justify-between">
             <!-- Logo and Disclaimer Section - Set to 40% width -->
             <div class="flex-1 md:basis-2/5 mb-6 md:mb-0">
                 <div class="flex items-center mb-4">
