@@ -1,8 +1,0 @@
-name = "your-worker-name"  # Replace with your worker's name
-
-[env.production]
-compatibility_flags = ["nodejs_compat_v2"]
-
-[build]
-  command = "npm run build"  # Adjust this to match your build command if needed
-  cwd = "."  # Path to the build folder if different

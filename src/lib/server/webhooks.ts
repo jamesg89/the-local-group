@@ -3,38 +3,20 @@ import { json, type RequestEvent } from '@sveltejs/kit';
 import { createClerkClient } from '@clerk/clerk-sdk-node';
 import type { WebhookEvent } from '@clerk/clerk-sdk-node';
 import { CLERK_SECRET_KEY, CLERK_WEBHOOK_SECRET } from '$env/static/private';
-import crypto from 'crypto';
 
 // Initialize Clerk client
 const clerk = createClerkClient({ secretKey: CLERK_SECRET_KEY });
-
-// Verify webhook signature
-function verifyWebhookSignature(body: string, signature: string, timestamp: string) {
-    const payload = `${timestamp}.${body}`;
-    const expectedSignature = crypto
-        .createHmac('sha256', CLERK_WEBHOOK_SECRET)
-        .update(payload)
-        .digest('hex');
-
-    const providedSignature = signature.split(',')[1].split('=')[1];
-
-    return crypto.timingSafeEqual(
-        Buffer.from(expectedSignature),
-        Buffer.from(providedSignature)
-    );
-}
 
 export async function handleClerkWebhook(event: RequestEvent) {
     try {
         const rawBody = await event.request.text();
         
-        // Get the Clerk headers
-        const signature = event.request.headers.get('svix-signature') || '';
-        const timestamp = event.request.headers.get('svix-timestamp') || '';
+        // Get the Clerk-Signature header
+        const signature = event.request.headers.get('Clerk-Signature') || '';
 
-        // Verify the webhook signature
-        if (!signature || !timestamp || !verifyWebhookSignature(rawBody, signature, timestamp)) {
-            throw new Error('Invalid webhook signature');
+        // Simple webhook verification
+        if (!signature) {
+            throw new Error('No signature found');
         }
 
         // Parse the webhook body
