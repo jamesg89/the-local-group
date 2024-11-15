@@ -3,6 +3,10 @@
   // @ts-ignore
   import WordMark from "./WordMark.svelte";
   import { onMount, onDestroy } from 'svelte';
+	import UserButton from 'clerk-sveltekit/client/UserButton.svelte'
+	import SignedIn from 'clerk-sveltekit/client/SignedIn.svelte'
+	import SignedOut from 'clerk-sveltekit/client/SignedOut.svelte'
+  import SignInButton from 'clerk-sveltekit/client/SignInButton.svelte'
 
   let scrolled = false;
   let isOpen = false;
@@ -69,7 +73,7 @@
         <span class="sr-only">{settings.data.site_title} home page</span>
         
         <!-- Desktop Menu -->
-        <ul class="md:flex gap-6 hidden">
+        <ul class="md:flex gap-6 hidden flex items-center space-x-6">
           {#each settings.data.navigation as item (item.label)}
             <li class="{home ? 'hover:text-slate text-white' : 'hover:text-gray-default text-slate'} ">
               <PrismicLink field={item.link} class="inline-flex items-center">
@@ -77,6 +81,17 @@
               </PrismicLink>
             </li>
           {/each}
+            <li>
+              <!-- Log In System -->
+              <SignedIn>
+                <UserButton afterSignOutUrl="/" />
+              </SignedIn>
+              <SignedOut>
+                <SignInButton mode="modal" class="text-slate bg-white hover:text-white hover:bg-slate border border-slate transition ease-in-out duration-500 flex items-center px-4 py-2 rounded-full"> 
+                  Sign in
+                </SignInButton>
+              </SignedOut>
+            </li>
         </ul>
     <!-- Hamburger Button (Mobile) -->
     <div class="md:hidden flex ml-auto items-center">
@@ -109,6 +124,17 @@
   <!-- Navigation Menu -->
   <nav class="mt-6 bg-slate/100 h-screen">
     <!-- Desktop Menu -->
+      <div>
+        <!-- Log In System -->
+        <SignedIn>
+          <UserButton afterSignOutUrl="/" />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton mode="modal" class="text-slate bg-white hover:text-white hover:bg-slate border border-slate transition ease-in-out duration-500 flex items-center px-4 py-2 rounded-full"> 
+            Sign in
+          </SignInButton>
+        </SignedOut>
+      </div>
       {#each settings.data.navigation as item (item.label)}
         <div class="hover:text-slate text-white text-lg p-4">
           <PrismicLink field={item.link} on:click={toggleMenu} class="inline-flex items-center">
