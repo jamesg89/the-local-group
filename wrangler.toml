@@ -1,12 +1,8 @@
-name = "the-local-group"  # Replace with your worker's name
-type = "javascript"  # Could be "javascript" or "webpack" depending on your setup
+name = "your-worker-name"  # Replace with your worker's name
 
 [env.production]
 compatibility_flags = ["nodejs_compat_v2"]
 
 [build]
   command = "npm run build"  # Adjust this to match your build command if needed
-  upload = { format = "service-worker" }
-
-[account]
-id = "da4dfe44d45a2143e0afa81a898ba7da"  # Replace with your Cloudflare account ID
+  cwd = "."  # Path to the build folder if different
