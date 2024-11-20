@@ -1,13 +1,21 @@
 import { createClient } from '$lib/prismicio';
+import type { LayoutServerLoad } from './$types';
 
-export const prerender = 'auto';
 
-export async function load({ fetch, cookies }) {
+export const load: LayoutServerLoad = async ({ fetch,  locals: { safeGetSession }, cookies }) => {
+	// Create the Prismic client
 	const client = createClient({ fetch, cookies });
 
-	const settings = await client.getSingle("settings")
+	// Fetch Prismic settings
+	const settings = await client.getSingle('settings');
 
+	// Fetch session
+	const { session } = await safeGetSession()
 	return {
-		settings
-	};
-}
+	  session,
+	  settings,
+	  cookies: cookies.getAll(),
+	}
+  }
+
+export const prerender = 'auto';
